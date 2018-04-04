@@ -3,6 +3,9 @@ import { NgModule } from '@angular/core';
 
 
 import { AppComponent } from './app.component';
+import { firebaseConfig } from "../environments/firebase.config";
+import { AngularFireModule} from "angularfire2";
+import { AngularFireDatabaseModule } from 'angularfire2/database-deprecated';
 
 
 @NgModule({
@@ -10,7 +13,9 @@ import { AppComponent } from './app.component';
     AppComponent
   ],
   imports: [
-    BrowserModule
+    BrowserModule,
+    AngularFireModule.initializeApp(firebaseConfig),
+    AngularFireDatabaseModule
   ],
   providers: [],
   bootstrap: [AppComponent]
